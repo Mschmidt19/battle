@@ -1,0 +1,4 @@
+<h1><%= (@game.opponent_of(@game.current_turn)).name %> attacked <%= (@game.current_turn).name %>!</h1>
+<form action="/play">
+  <button type="submit" style="Width: 200px; Height: 70px; Background-color: white ; Color: blue; Font-size: 30px; Border: 2px solid black">Okay</button>
+</form>
