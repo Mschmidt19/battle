@@ -30,3 +30,14 @@ def p2_attack_and_confirm
   end
   click_button 'Okay'
 end
+
+def attack_4_times_each
+  p1_attack_and_confirm
+  p2_attack_and_confirm
+  p1_attack_and_confirm
+  p2_attack_and_confirm
+  p1_attack_and_confirm
+  p2_attack_and_confirm
+  p1_attack_and_confirm
+  p2_attack_and_confirm
+end
