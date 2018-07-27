@@ -11,7 +11,7 @@ class Player
   attr_reader :hp
 
   def receive_damage
-    @hp -= 10
+    @hp -= Kernel.rand(1..10)
   end
 
 end

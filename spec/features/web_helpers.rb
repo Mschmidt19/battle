@@ -5,39 +5,18 @@ def sign_in_and_play
   click_button 'Start Game'
 end
 
-def p1_attack
-  within ".p1_content" do
-    click_button 'Attack!'
-  end
+def attack
+  click_button 'Attack!'
 end
 
-def p2_attack
-  within ".p2_content" do
-    click_button 'Attack!'
-  end
-end
 
-def p1_attack_and_confirm
-  within ".p1_content" do
-    click_button 'Attack!'
-  end
+
+def attack_and_confirm
+  click_button 'Attack!'
   click_button 'Okay'
 end
 
-def p2_attack_and_confirm
-  within ".p2_content" do
-    click_button 'Attack!'
-  end
-  click_button 'Okay'
-end
 
 def attack_4_times_each
-  p1_attack_and_confirm
-  p2_attack_and_confirm
-  p1_attack_and_confirm
-  p2_attack_and_confirm
-  p1_attack_and_confirm
-  p2_attack_and_confirm
-  p1_attack_and_confirm
-  p2_attack_and_confirm
+  8.times { attack_and_confirm }
 end

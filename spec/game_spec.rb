@@ -20,16 +20,22 @@ describe Game do
     end
   end
 
-  describe "#current_turn" do
-    it "starts as player1" do
-      expect(game.current_turn).to eq p1
+  context "player 1 starts" do
+    before do
+      allow(Kernel).to receive(:rand).and_return(0)
     end
-  end
 
-  describe "#switch_turns" do
-    it "changes current_turn to player the next player" do
-      game.switch_turns
-      expect(game.current_turn).to eq p2
+    describe "#current_turn" do
+      it "starts as player1" do
+        expect(game.current_turn).to eq p1
+      end
+    end
+
+    describe "#switch_turns" do
+      it "changes current_turn to player the next player" do
+        game.switch_turns
+        expect(game.current_turn).to eq p2
+      end
     end
   end
 

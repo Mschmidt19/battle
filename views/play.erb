@@ -5,18 +5,22 @@
 
 <div class="p1_content" style="float: left; width:50%;">
   <h2 style="text-align: center"><%= @game.player1.name %>: <%= @game.player1.hp %>HP</h2>
-  <form action="/attack" method="post">
-    <button type="submit" style="Width: 120px; Height: 40px; Background-color: Black; Color: Red; Font-size: 20px; Border: 2px solid red">Attack!</button>
-  </form>
 </div>
 
 <div class="p2_content" style="float: left; width:50%;">
   <h2 style="text-align: center"><%= @game.player2.name %>: <%= @game.player2.hp %>HP</h2>
-  <form action="/attack" method="post">
-    <button type="submit" style="Width: 120px; Height: 40px; Background-color: Black; Color: Red; Font-size: 20px; Border: 2px solid red">Attack!</button>
-  </form>
 </div>
 
 <div style="clear: both">
-  <h3 style="text-align: center"><%= @game.current_turn.name %>'s turn</h3>
+  <% if @game.turn_count == 0 %>
+    <h2 style="text-align: center"><%= @game.current_turn.name %> starts!</h2>
+  <% else %>
+    <h2 style="text-align: center"><%= @game.current_turn.name %>'s turn</h2>
+  <% end %>
+</div>
+
+<div style="Margin-left: auto; Margin-right: auto; width: 120px">
+  <form action="/attack" method="post">
+    <button type="submit" style="Width: 120px; Height: 40px; Background-color: Black; Color: Red; Font-size: 20px; Border: 2px solid red">Attack!</button>
+  </form>
 </div>
