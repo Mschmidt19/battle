@@ -1,4 +1,8 @@
-<h1><%= (@game.opponent_of(@game.current_turn)).name %> attacked <%= (@game.current_turn).name %>!</h1>
-<form action="/play">
+<% if @game.current_turn == @game.player1 %>
+  <h1><%= @game.player1.name %> attacked <%= @game.player2.name %>!</h1>
+<% else %>
+  <h1><%= @game.player2.name %> attacked <%= @game.player1.name %>!</h1>
+<% end %>
+<form action="/switch-turns" method="post">
   <button type="submit" style="Width: 200px; Height: 70px; Background-color: white ; Color: blue; Font-size: 30px; Border: 2px solid black">Okay</button>
 </form>
